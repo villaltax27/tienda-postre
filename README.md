@@ -1,4 +1,4 @@
-# Dulce Encanto
+# Sweet Place
 
 Tienda web de postres creada con PHP, MySQL, HTML, CSS y Bootstrap.
 
