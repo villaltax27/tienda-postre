@@ -1,0 +1,70 @@
+:root {
+    --crema: #fff8f0;
+    --rosa: #efa6b5;
+    --chocolate: #4a2c2a;
+    --caramelo: #d98c4a;
+}
+
+body {
+    background: var(--crema);
+    color: var(--chocolate);
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand,
+h1,
+h2,
+h3 {
+    color: var(--chocolate);
+}
+
+.hero-section {
+    background: linear-gradient(110deg, rgba(255, 248, 240, .97), rgba(239, 166, 181, .7));
+}
+
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+}
+
+.eyebrow {
+    color: var(--caramelo);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12rem;
+}
+
+.btn-principal {
+    background: var(--chocolate);
+    border-color: var(--chocolate);
+    color: #fff;
+}
+
+.btn-principal:hover {
+    background: var(--caramelo);
+    border-color: var(--caramelo);
+    color: #fff;
+}
+
+.producto-card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.postre-ilustracion {
+    align-items: center;
+    background: #f9dce1;
+    display: flex;
+    font-size: 5rem;
+    height: 180px;
+    justify-content: center;
+}
+
+footer {
+    background: var(--chocolate);
+    color: #fff;
+}
