@@ -1,0 +1,6 @@
+# Archivos locales y temporales
+.DS_Store
+Thumbs.db
+
+# Configuración local si más adelante se separan las credenciales
+php/config.local.php
