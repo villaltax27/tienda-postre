@@ -46,7 +46,85 @@ h1, h2, h3, .marca { color: var(--chocolate); font-family: 'Playfair Display', G
 .producto-info { padding: .65rem .7rem .8rem; position: relative; } .producto-info h3 { font-family: 'DM Sans', Arial, sans-serif; font-size: .9rem; font-weight: 700; margin: 0 0 .18rem; }
 .producto-info > strong { color: var(--rosa); display: block; font-size: 1rem; } .producto-info p { font-size: .7rem; margin: .18rem 0; } .producto-info p span { color: #887b76; }
 .boton-agregar { border: 1px solid var(--rosa); border-radius: .55rem; bottom: .7rem; color: var(--rosa); font-size: .7rem; font-weight: 700; padding: .42rem .55rem; position: absolute; right: .7rem; text-decoration: none; }
-.formulario-card { background: #fff; border-radius: 1rem; box-shadow: 0 .5rem 1.5rem rgba(74, 44, 42, .12); max-width: 470px; padding: 2rem; }
+body:has(.formulario-card) main.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 250px);
+}
+
+.formulario-card {
+    background: rgba(255, 253, 251, .96);
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 1.35rem;
+    box-shadow: 0 1rem 3rem rgba(85, 45, 35, .14);
+    max-width: 480px;
+    padding: 2.6rem 2.4rem 2.25rem;
+    position: relative;
+    width: 100%;
+}
+
+.formulario-card::before {
+    align-items: center;
+    background: linear-gradient(135deg, #d64251, #ed7880);
+    border: 5px solid #fff6f1;
+    border-radius: 50%;
+    box-shadow: 0 .4rem 1rem rgba(207, 67, 81, .22);
+    color: #fff;
+    content: "🍓";
+    display: flex;
+    font-size: 1.45rem;
+    height: 3.35rem;
+    justify-content: center;
+    position: absolute;
+    right: 2rem;
+    top: -1.65rem;
+    width: 3.35rem;
+}
+
+.formulario-card .eyebrow {
+    font-size: .7rem;
+    letter-spacing: .19rem;
+    margin-bottom: .75rem;
+}
+
+.formulario-card h1 {
+    font-size: 2.35rem;
+    letter-spacing: -.09rem;
+    margin-bottom: 1.35rem;
+}
+
+.formulario-card .form-label {
+    color: var(--chocolate);
+    font-size: .86rem;
+    font-weight: 700;
+    margin-bottom: .42rem;
+}
+
+.formulario-card .form-control {
+    background: #fff;
+    border: 1px solid #ead9d0;
+    border-radius: .7rem;
+    box-shadow: none;
+    padding: .72rem .85rem;
+}
+
+.formulario-card .form-control:focus {
+    border-color: var(--rosa);
+    box-shadow: 0 0 0 .22rem rgba(207, 67, 81, .13);
+}
+
+.formulario-card .btn-principal {
+    box-shadow: 0 .5rem 1rem rgba(207, 67, 81, .23);
+    margin-top: .15rem;
+    padding: .82rem 1rem;
+}
+
+.formulario-card a {
+    color: var(--rosa);
+    font-weight: 700;
+    text-decoration: none;
+}
 .categoria { color: var(--rosa); font-size: .8rem; font-weight: 700; text-transform: uppercase; }
 .postre-ilustracion { align-items: center; background: var(--rosa-suave); display: flex; font-size: 5rem; height: 180px; justify-content: center; }
 .footer-principal { background: #3b1d18; color: #fff7f2; margin-top: 3rem; }
@@ -62,3 +140,220 @@ h1, h2, h3, .marca { color: var(--chocolate); font-family: 'Playfair Display', G
 @media (max-width: 1100px) { .newsletter { grid-template-columns: 1fr 1fr; padding: 2rem; } .nota-lateral { display: none; } }
 @media (max-width: 991px) { .hero-contenedor { grid-template-columns: 1fr; } .hero-texto { padding-left: 1rem; } .hero-imagen { min-height: 260px; } .productos-grid { grid-template-columns: repeat(2, 1fr); } .footer-contenido { grid-template-columns: 2fr 1fr 1fr; } .footer-marca { grid-column: 1 / -1; } }
 @media (max-width: 575px) { .hero-texto h1 { letter-spacing: -.11rem; } .beneficios { grid-template-columns: 1fr; } .beneficios article { border-bottom: 1px solid var(--borde); border-right: 0; justify-content: flex-start; padding: .6rem; } .beneficios article:last-child { border-bottom: 0; } .categorias-grid { grid-template-columns: 1fr; } .titulo-seccion { align-items: flex-start; flex-direction: column; gap: .4rem; } .producto-imagen { height: 175px; } .newsletter { display: block; padding: 2.2rem 1.2rem; } .newsletter-form { margin-top: 1rem; } .newsletter-form button { padding: .8rem; } .footer-contenido { gap: 1.5rem; grid-template-columns: 1fr 1fr; padding: 2.5rem 1.25rem; } .footer-marca { grid-column: 1 / -1; } .footer-legal { margin: 0 1.25rem; } .footer-legal span { display: none; } }
+
+.logo-sweet-place {
+    display: block;
+    height: 42px;
+    max-width: 200px;
+    object-fit: contain;
+    width: auto;
+}
+
+.auth-page {
+    align-items: center;
+    background:
+        radial-gradient(circle at top left, #fffdf9 0, transparent 36%),
+        #fff6f0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.auth-shell {
+    background: #fffdfb;
+    border: 1px solid #eadbd1;
+    border-radius: 1.2rem;
+    box-shadow: 0 1rem 3rem rgba(72, 37, 29, .12);
+    display: grid;
+    grid-template-columns: minmax(350px, .95fr) minmax(360px, .85fr);
+    max-width: 1050px;
+    min-height: 680px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.auth-form-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.2rem 2.7rem;
+}
+
+.auth-logo img {
+    height: 60px;
+    margin-bottom: 3rem;
+    max-width: 240px;
+    object-fit: contain;
+    width: auto;
+}
+
+.auth-eyebrow {
+    color: #d64251;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .17rem;
+    margin-bottom: .7rem;
+}
+
+.auth-copy h1 {
+    color: #28130e;
+    font-family: Georgia, serif;
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    letter-spacing: -.1rem;
+    line-height: 1;
+    margin: 0;
+}
+
+.auth-copy p:not(.auth-eyebrow) {
+    color: #776864;
+    line-height: 1.5;
+    margin: .85rem 0 1.7rem;
+}
+
+.auth-form label:not(.auth-check) {
+    color: #4a2c2a;
+    display: block;
+    font-size: .85rem;
+    font-weight: 700;
+    margin: .9rem 0 .42rem;
+}
+
+.auth-input {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e7d7ce;
+    border-radius: .75rem;
+    display: flex;
+    overflow: hidden;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.auth-input:focus-within {
+    border-color: #d64251;
+    box-shadow: 0 0 0 .22rem rgba(214, 66, 81, .12);
+}
+
+.auth-input span {
+    color: #8a7770;
+    font-size: 1rem;
+    padding: 0 .85rem;
+}
+
+.auth-input input {
+    background: transparent;
+    border: 0;
+    color: #28130e;
+    font-size: .95rem;
+    outline: 0;
+    padding: .9rem .8rem .9rem 0;
+    width: 100%;
+}
+
+.auth-check {
+    align-items: flex-start;
+    color: #695b56;
+    display: flex;
+    font-size: .82rem;
+    gap: .55rem;
+    line-height: 1.4;
+    margin: 1.15rem 0;
+}
+
+.auth-check input {
+    accent-color: #d64251;
+    margin-top: .15rem;
+}
+
+.auth-button {
+    background: linear-gradient(135deg, #d64251, #c63749);
+    border: 0;
+    border-radius: .75rem;
+    box-shadow: 0 .55rem 1rem rgba(198, 55, 73, .2);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+    width: 100%;
+}
+
+.auth-button:hover {
+    box-shadow: 0 .75rem 1.3rem rgba(198, 55, 73, .28);
+    transform: translateY(-2px);
+}
+
+.auth-switch {
+    color: #6b5c57;
+    font-size: .9rem;
+    margin: 1.55rem 0 0;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: #d64251;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-photo {
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    min-height: 100%;
+    padding: 2rem;
+    position: relative;
+}
+
+.auth-photo::before {
+    background: linear-gradient(0deg, rgba(42, 19, 14, .36), transparent 48%);
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.auth-photo p {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-style: italic;
+    line-height: 1.1;
+    margin: 0;
+    position: relative;
+    text-align: right;
+    width: 100%;
+}
+
+.auth-login-photo {
+    background-image: url("https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1100&q=85");
+}
+
+.auth-register-photo {
+    background-image: url("https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=1100&q=85");
+}
+
+@media (max-width: 760px) {
+    .auth-page {
+        padding: 1rem;
+    }
+
+    .auth-shell {
+        display: block;
+        min-height: 0;
+    }
+
+    .auth-photo {
+        display: none;
+    }
+
+    .auth-form-panel {
+        padding: 2.2rem 1.4rem;
+    }
+
+    .auth-logo img {
+        height: 50px;
+        margin-bottom: 2rem;
+    }
+}
