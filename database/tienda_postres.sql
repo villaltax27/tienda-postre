@@ -54,6 +54,11 @@ INSERT INTO categorias (nombre_categoria, descripcion) VALUES
 ('Cupcakes', 'Pastelitos individuales decorados'),
 ('Galletas', 'Galletas artesanales recién horneadas');
 
+-- Cuenta de demostración para el panel de administración.
+-- Correo: admin@sweetplace.test | Contraseña: password
+INSERT INTO usuarios (nombre, correo, contrasena, tipo_usuario) VALUES
+('Administración Sweet Place', 'admin@sweetplace.test', '$2y$10$EFLp5FvOLDEZ8sZIGbKNvu6uJWnzA/9Ahoi92pzp4zNSjDeFqu2KK', 'administrador');
+
 INSERT INTO productos (nombre_producto, descripcion, precio, cantidad, id_categoria) VALUES
 ('Pastel de chocolate', 'Bizcocho de chocolate con crema', 18.00, 10, 1),
 ('Cheesecake de fresa', 'Cheesecake cremoso con fresas', 16.00, 8, 1),

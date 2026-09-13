@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $tituloPagina = $tituloPagina ?? 'Sweet Place';
 $base = $base ?? '';
+require_once __DIR__ . '/util.php';
 $usuarioActual = $_SESSION['usuario'] ?? null;
 ?>
 <!doctype html>
@@ -28,8 +29,14 @@ $usuarioActual = $_SESSION['usuario'] ?? null;
                 <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>index.php">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/productos.php">Explorar</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>index.php#categorias">Categorías</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>login.php">Mis pedidos</a></li>
                 <?php if ($usuarioActual): ?>
+                    <?php if (($usuarioActual['tipo_usuario'] ?? '') === 'administrador'): ?>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>admin/panel.php">Panel</a></li>
+                    <?php else: ?>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/carrito.php">Carrito (<?php echo array_sum($_SESSION['carrito'] ?? []); ?>)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/mis_compras.php">Mis pedidos</a></li>
+                    <?php endif; ?>
+                    <li class="nav-item"><span class="nav-link small">Hola, <?php echo e($usuarioActual['nombre']); ?></span></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>logout.php">Cerrar sesión</a></li>
                 <?php else: ?>
                     <li class="nav-item"><a class="nav-link icono-menu" href="<?php echo $base; ?>cliente/productos.php" aria-label="Buscar">⌕</a></li>
