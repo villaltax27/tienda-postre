@@ -1,8 +1,10 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 function requerirInicio(): void
 {
     if (empty($_SESSION['usuario'])) {
-        header('Location: ../login.php');
+        $base = $GLOBALS['base'] ?? '';
+        header('Location: ' . $base . 'login.php');
         exit;
     }
 }
@@ -12,7 +14,8 @@ function requerirAdministrador(): void
     requerirInicio();
 
     if (($_SESSION['usuario']['tipo_usuario'] ?? '') !== 'administrador') {
-        header('Location: ../cliente/productos.php');
+        $base = $GLOBALS['base'] ?? '';
+        header('Location: ' . $base . 'cliente/productos.php');
         exit;
     }
 }
