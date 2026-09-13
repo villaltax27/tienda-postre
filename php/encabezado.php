@@ -20,7 +20,8 @@ $usuarioActual = $_SESSION['usuario'] ?? null;
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
     <div class="container">
-        <a class="navbar-brand marca" href="<?php echo $base; ?>index.php">Sweet Place <span>🍓</span></a>
+        <a class="navbar-brand marca" href="<?php echo $base; ?>index.php">
+    <img class="logo-sweet-place" src="<?php echo $base; ?>img/sweetplace-logo.png" alt="Sweet Place"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
             <span class="navbar-toggler-icon"></span>
         </button>
