@@ -52,13 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Crear cuenta | Sweet Place</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body class="auth-body">
     <main class="auth-page">
         <section class="auth-shell auth-shell-register">
             <div class="auth-form-panel">
-                <a class="auth-logo" href="index.php">
-                    <img src="img/sweetplace-logo.png" alt="Sweet Place">
-                </a>
+                <div class="auth-topbar"><a class="auth-logo" href="index.php"><img src="img/sweetplace-logo.png" alt="Sweet Place"></a><a class="auth-back" href="index.php">← Inicio</a></div>
 
                 <div class="auth-copy">
                     <p class="auth-eyebrow">ÚNETE A NOSOTROS</p>
@@ -71,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="post" class="auth-form">
                     <label for="nombre">Nombre completo</label>
                     <div class="auth-input">
-                        <span>◉</span>
                         <input
                             id="nombre"
                             name="nombre"
@@ -85,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <label for="correo">Correo electrónico</label>
                     <div class="auth-input">
-                        <span>✉</span>
                         <input
                             id="correo"
                             name="correo"
@@ -99,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <label for="contrasena">Contraseña</label>
                     <div class="auth-input">
-                        <span>🔒</span>
                         <input
                             id="contrasena"
                             name="contrasena"
@@ -113,7 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <label for="confirmar_contrasena">Confirmar contraseña</label>
                     <div class="auth-input">
-                        <span>🔒</span>
                         <input
                             id="confirmar_contrasena"
                             name="confirmar_contrasena"

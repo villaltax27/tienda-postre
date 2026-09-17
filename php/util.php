@@ -10,3 +10,23 @@ function mostrarMensaje(): void {
 }
 function esCliente(): bool { return ($_SESSION['usuario']['tipo_usuario'] ?? '') === 'cliente'; }
 function productosCarrito(): array { return $_SESSION['carrito'] ?? []; }
+function imagenProducto(array $producto): string {
+    return trim((string) ($producto['imagen'] ?? '')) ?: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85';
+}
+function etiquetaEstadoPedido(string $estado): string {
+    return [
+        'pendiente' => 'Pendiente',
+        'en_preparacion' => 'En preparación',
+        'listo' => 'Listo para retirar',
+        'entregado' => 'Entregado',
+    ][$estado] ?? 'Pendiente';
+}
+function etiquetaEstadoPersonalizado(string $estado): string {
+    return [
+        'solicitado' => 'Solicitud recibida',
+        'en_revision' => 'En revisión',
+        'confirmado' => 'Confirmado',
+        'listo' => 'Listo',
+        'entregado' => 'Entregado',
+    ][$estado] ?? 'Solicitud recibida';
+}
