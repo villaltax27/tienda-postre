@@ -28,19 +28,23 @@ $usuarioActual = $_SESSION['usuario'] ?? null;
         <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 menu-principal">
                 <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>index.php">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/productos.php">Explorar</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>index.php#categorias">Categorías</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/productos.php">Postres</a></li>
                 <?php if ($usuarioActual): ?>
                     <?php if (($usuarioActual['tipo_usuario'] ?? '') === 'administrador'): ?>
                         <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>admin/panel.php">Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>admin/pedidos_personalizados.php">Personalizados</a></li>
                     <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/carrito.php">Carrito (<?php echo array_sum($_SESSION['carrito'] ?? []); ?>)</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/mis_compras.php">Mis pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>cliente/pedido_personalizado.php">Personalizados</a></li>
+                        <li class="nav-item"><a class="nav-link nav-carrito" href="<?php echo $base; ?>cliente/carrito.php">Carrito <span><?php echo array_sum($_SESSION['carrito'] ?? []); ?></span></a></li>
                     <?php endif; ?>
-                    <li class="nav-item"><span class="nav-link small">Hola, <?php echo e($usuarioActual['nombre']); ?></span></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>logout.php">Cerrar sesión</a></li>
+                    <li class="nav-item dropdown nav-usuario">
+                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo ($usuarioActual['tipo_usuario'] ?? '') === 'administrador' ? 'Administración' : e($usuarioActual['nombre']); ?></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <?php if (($usuarioActual['tipo_usuario'] ?? '') === 'cliente'): ?><li><a class="dropdown-item" href="<?php echo $base; ?>cliente/mis_compras.php">Mis pedidos</a></li><li><hr class="dropdown-divider"></li><?php endif; ?>
+                            <li><a class="dropdown-item" href="<?php echo $base; ?>logout.php">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
                 <?php else: ?>
-                    <li class="nav-item"><a class="nav-link icono-menu" href="<?php echo $base; ?>cliente/productos.php" aria-label="Buscar">⌕</a></li>
                     <li class="nav-item"><a class="btn btn-principal ms-lg-2" href="<?php echo $base; ?>login.php">Iniciar sesión</a></li>
                 <?php endif; ?>
             </ul>

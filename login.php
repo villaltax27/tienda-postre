@@ -44,13 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Iniciar sesión | Sweet Place</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body class="auth-body">
     <main class="auth-page">
         <section class="auth-shell">
             <div class="auth-form-panel">
-                <a class="auth-logo" href="index.php">
-                    <img src="img/sweetplace-logo.png" alt="Sweet Place">
-                </a>
+                <div class="auth-topbar"><a class="auth-logo" href="index.php"><img src="img/sweetplace-logo.png" alt="Sweet Place"></a><a class="auth-back" href="index.php">← Inicio</a></div>
 
                 <div class="auth-copy">
                     <p class="auth-eyebrow">HOLA DE NUEVO</p>
@@ -63,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="post" class="auth-form">
                     <label for="correo">Correo electrónico</label>
                     <div class="auth-input">
-                        <span>✉</span>
                         <input
                             id="correo"
                             name="correo"
@@ -76,7 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <label for="contrasena">Contraseña</label>
                     <div class="auth-input">
-                        <span>🔒</span>
                         <input
                             id="contrasena"
                             name="contrasena"
